@@ -100,7 +100,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component 1 | H | 10hrs| 12hrs | 12hrs |
 | Shuffle of Dice Function| H | 2hrs |
 | Store Players Roll and  Compare| H | 3hrs| 
-| Animatiion of Dice | H | 4hrs |
+| Animation of Dice | H | 4hrs |
 | Landing Page (Using Form) | 2 hrs |
 | CSS Styling | L | 4hrs - 6hrs |
 
