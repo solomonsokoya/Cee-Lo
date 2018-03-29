@@ -31,9 +31,8 @@
 
 // }
 
-
 const dice = [1, 2, 3, 4, 5, 6];
-const player1 = [];
+let player1 = [];
 const player2 = [];
 
 function roll(dice) {
@@ -48,7 +47,7 @@ function setDice(){
     const rolling = roll(dice);
     playerRoll.push(rolling)
 
-   };
+   }
 
   return(playerRoll);
 
@@ -58,30 +57,33 @@ function setDice(){
 function whoWon() {
 
     const dice1 = setDice();
-    let value = '';
+
 
 
  console.log(dice1)
 
-  if(dice1[0] === dice1[1] && dice[1] === dice1[2]) {
-    value = dice[0]
-    console = 'trips'
+  if(dice1[0] === dice1[1] && dice1[1] === dice1[2]) {
+    value = dice1[0]
+    console.log ('trips');
        }
   else if(dice1[0] === dice1[1] || dice1[1] === dice1[2] || dice1[0] === dice1[2]){
       dice1.sort();
       if(dice1[0] === dice1[1]){
-       value = dice[2];
-       console.log(dice[2]);
+
+       console.log(dice1[2]);
+       console.log('point');
 
         }
 
-      else if (dice1[1] === dice[2]) {
-        value = dice[0];
-        console.log(value);
+      else if (dice1[1] === dice1[2]) {
+
+        console.log(dice1[0]);
+        console.log('point1')
       }
       else{
-        value = dice[1];
-        console.log(value);
+
+        console.log(dice1[1])
+        console.log('point2');
       }
     }
 
@@ -106,4 +108,3 @@ function whoWon() {
 }
 
 whoWon()
-
