@@ -1,39 +1,16 @@
-// let game ={
-
-//   players[{
-
-//     name: 'player1',
-//     dice: 'dice1',
-//     roll:[]
-
-//     },
-
-
-//     {
-//       name: 'player2',
-//       dice: 'dice2',
-//       roll:[]
-//     },
-
-//     let currentPlayer: {},
-
-//     function nextTurn(){
-
-//       for(let i = 0; i < 2 ; i++){
-//       game.currentPlayer = game.players[i]
-
-//           }
-//     }
-
-
-// ]
-
-
-// }
-
 const dice = [1, 2, 3, 4, 5, 6];
-let player1 = [];
-const player2 = [];
+let value = [];
+
+
+
+$('button').click(whoWon);
+
+
+
+
+
+
+
 
 function roll(dice) {
   return dice[Math.floor(Math.random() * dice.length)];
@@ -54,36 +31,42 @@ function setDice(){
 }
 
 
+
+
+
+
+
 function whoWon() {
 
-    const dice1 = setDice();
+  const dice1 = setDice();
 
 
 
  console.log(dice1)
 
   if(dice1[0] === dice1[1] && dice1[1] === dice1[2]) {
-    value = dice1[0]
-    console.log ('trips');
+
+      value.push(1 + dice1[0]);
+
        }
   else if(dice1[0] === dice1[1] || dice1[1] === dice1[2] || dice1[0] === dice1[2]){
       dice1.sort();
       if(dice1[0] === dice1[1]){
 
-       console.log(dice1[2]);
-       console.log('point');
+       value.push(dice1[2]);
 
         }
 
       else if (dice1[1] === dice1[2]) {
 
-        console.log(dice1[0]);
-        console.log('point1')
+
+        value.push(dice1[0]);
       }
       else{
 
-        console.log(dice1[1])
-        console.log('point2');
+
+
+        value.push(dice1[1]);
       }
     }
 
@@ -91,13 +74,14 @@ function whoWon() {
        dice1.sort();
     if(dice1[0] === 1 && dice1[1] === 2 && dice1[2] === 3){
 
-      value = 0;
-      console.log('you lose');
+      value.push(0);
+
     }
 
     else if ( dice1[0] === 4 && dice1[1] === 5 && dice1[2] === 6){
 
-      console.log('you win')
+      value.push(20);
+
     }
 
     else{
@@ -105,6 +89,7 @@ function whoWon() {
       console.log('roll again')
     }
   }
-}
 
-whoWon()
+  $('.playerOne').text(value[0]);
+$('.playerTwo').text(value[1]);
+}
