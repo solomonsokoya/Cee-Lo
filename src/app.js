@@ -55,7 +55,7 @@ function playGame() {
   $('.playerOne').text(value[0]);
   $('.playerTwo').text(value[1]);
 
-setTimeout(compareValue,900);
+setTimeout(compareValue,850);
 back();
 
 }
@@ -70,7 +70,7 @@ function compareValue(){
       $('.content').text(`P2 Has Won`);
     }
     else {
-      $('.content').text(`Roll Again`);
+      $('.content').text(`Play Again`);
     }
   }
 }
