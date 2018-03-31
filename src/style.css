@@ -20,7 +20,7 @@
   text-align: center;
   font-size: 200px;
   opacity: .2;
-  font-family: helvetica;
+  font-family: Telefon Black", Sans-Serif;
 }
 
 
@@ -32,21 +32,54 @@
   top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
   ". . . . . . . "
-  ". dice1 . dice2 . dice3 . "
-  ". . . . . . . "
-  ". . button button button . . "
-  "p1 p1 . . . p2 p2"
-  "p1results p1results . . . p2results p2results ";
+  ". dice1 . dice2 . dice3 ."
+  "p1 p1 . . .p2 p2"
+  "p1results p1results theButton theButton theButton p2results p2results ";
 }
-
 .button{
-  grid-area: button;
+  width: 10vw;
+  height: 10vh;
   opacity: .6;
   border-radius: 20px;
+  box-shadow: 4px 4px 4px black;
+  outline: 0;
+
 }
+.theButton{
+  align-self: center;
+  grid-area: theButton;
+  justify-self: center;
+
+}
+
+#die1{
+
+  text-align: center;
+  background-image: url("../images/die1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 10vw;
+  position: absolute;
+
+}
+
+.animation{
+    text-align: center;
+  background-image: url("../images/die1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 10vw;
+  animation: spin 5s;
+  position: absolute;
+
+}
+
+
 .dice1{
   grid-area: dice1;
 }
@@ -69,3 +102,13 @@
   grid-area: p2results;
 }
 
+
+@keyframes spin{
+
+  from{
+    transform: scale(.5) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(3600deg);
+  }
+}
