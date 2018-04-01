@@ -35,7 +35,7 @@
   grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
   ". . . . . . . "
-  ". dice1 . dice2 . dice3 ."
+  ". dice1 dice2 dice3 . . ."
   "p1 p1 . . .p2 p2"
   "p1results p1results theButton theButton theButton p2results p2results ";
 }
@@ -55,39 +55,31 @@
 
 }
 
-#die1{
+#die1, #die2, #die3{
 
-  text-align: center;
-  background-image: url("../images/die1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 10vh;
-  width: 10vw;
-  position: absolute;
-
-}
-
-.animation{
-    text-align: center;
-  background-image: url("../images/die1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 10vh;
-  width: 10vw;
+  height: 100%;
+  width: 100%;
   animation: spin 5s;
-  position: absolute;
+  animation-fill-mode: forwards;
 
 }
+
 
 
 .dice1{
   grid-area: dice1;
+  width: 50px;
+  height: 50px;
 }
 .dice2{
   grid-area: dice2;
+  width: 50px;
+  height: 50px;
 }
 .dice3{
   grid-area: dice3;
+  width: 50px;
+  height: 50px;
 }
 .p1{
   grid-area: p1;
@@ -106,9 +98,10 @@
 @keyframes spin{
 
   from{
-    transform: scale(.5) rotate(0deg);
+    transform: translate(0,0) rotate(0deg);
+
   }
   to {
-    transform: scale(1) rotate(3600deg);
+    transform: translate(300px,0) rotate(5400deg);
   }
 }
