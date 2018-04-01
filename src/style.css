@@ -55,13 +55,21 @@
 
 }
 
-#die1, #die2, #die3{
+.die1, .die2, .die3{
 
   height: 100%;
   width: 100%;
-  animation: spin 5s;
+  animation: spinToTheRight 5s;
   animation-fill-mode: forwards;
 
+}
+
+.die11, .die12, .die13{
+
+  height: 100%;
+  width: 100%;
+  animation: spinToTheLeft 5s;
+  animation-fill-mode: forwards;
 }
 
 
@@ -95,13 +103,26 @@
 }
 
 
-@keyframes spin{
+@keyframes spinToTheRight{
 
   from{
-    transform: translate(0,0) rotate(0deg);
+    transform: /*translate(0,0) */rotate(0deg);
 
   }
   to {
-    transform: translate(300px,0) rotate(5400deg);
+    transform: /*translate(300px,0)*/ rotate(5400deg);
   }
 }
+
+@keyframes spinToTheLeft{
+
+  from{
+    transform: /*translate(0,0)*/ rotate(0deg);
+
+  }
+  to {
+    transform: /*translate(-300px,0)*/ rotate(-5400deg);
+  }
+}
+
+
