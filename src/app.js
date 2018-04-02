@@ -1,7 +1,25 @@
 const di = [1, 2, 3, 4, 5, 6];
 let value = [];
 let x = 1;
+let $player1 = "";
+let $player2 = "";
 
+
+// Eventlistener for sumbit button
+let submitClick = $('#submitButton').on('click', function(e){
+
+  e.preventDefault();
+
+  $player1 = $('#player1').val()
+  $player2 = $('#player2').val()
+
+  $('.landingPage').css('display', 'none');
+  $('.content').text(`${$player1} Roll`);
+
+});
+
+
+//Since there is only one button, used a counter to give each click different attr
 $('button').click(function(){
   if(x === 1){
     makeDice();
@@ -31,16 +49,17 @@ $('button').click(function(){
     location.reload(true);
 
   }
-  else if(value === 20){
+  else if(value[0] === 20){
     location.reload(true);
   }
 
-  else if(value == 0){
+  else if(value[0] == 0){
     location.reload(true);
   }
 
 });
 
+//Function to move dice to the left by adding classes
 function moveDiceToTheLeft() {
   for (let i = 1; i <= 3; i += 1) {
     let $div= $(`.die${i}`);
@@ -48,11 +67,12 @@ function moveDiceToTheLeft() {
     $div.addClass(`die${i + 10}`);
   }
 }
-
+// Generates a random number
 function roll(dice) {
   return dice[Math.floor(Math.random() * dice.length)];
 }
 
+//Generate an Array of 3 random numbers
 function setDice() {
   const playerRoll = [];
   for (let i = 1; i <= 3; i += 1) {
@@ -63,11 +83,14 @@ function setDice() {
   return (playerRoll);
 }
 
+//Function changes the picture of dice when the numbers change
 function diePics(diceArray) {
   for ( let i = 0; i < 3; i+= 1) {
     $(`.img${i+1}`).attr('src', `images/die${diceArray[i]}.png`);
   }
 }
+
+//Game function
 
 function playGame() {
   const temp = setDice();
@@ -112,20 +135,24 @@ back();
 
 }
 
+//Makes the first set of Arrays
 function makeDice(){
   for( let i = 1; i <=3; i+= 1){
     let $div= $(`.dice${i}`);
     $div.append(`<img class = "die${i} img${i}" src ="images/die1.png">`);
   }
 }
+
+// Compare Function
+
 function compareValue(){
   if (value.length === 2) {
     if (value[0] > value[1]) {
-      $('.content').text(`P1 Has Won`);
+      $('.content').text(`${$player1} Has Won`);
       $('.button').text("Play Again");
     }
     else if ( value[0] < value[1]){
-      $('.content').text(`P2 Has Won`);
+      $('.content').text(`${$player2}  Has Won`);
       $('.button').text("Play Again");
     }
     else {
@@ -135,11 +162,11 @@ function compareValue(){
   }
   else if(value.length === 1){
     if (value[0] === 20) {
-      $('.content').text(`P1 Has Won`);
+      $('.content').text(`${$player1}  Has Won`);
       $('.button').text("Play Again");
     }
     else if(value[0] === 0){
-      $('.content').text(`P2 Has Won`);
+      $('.content').text(`${$player2}  Has Won`);
       $('.button').text("Play Again");
     }
   }
@@ -147,6 +174,6 @@ function compareValue(){
 
 function back(){
   if(value.length === 1) {
-    $('.content').text(`P2 Turn`);
+    $('.content').text(`${$player2}  Turn`);
   }
 }

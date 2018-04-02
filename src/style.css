@@ -28,7 +28,7 @@
 
 
 .grid{
-  /*z-index: 2;*/
+
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -64,6 +64,7 @@
   width: 100%;
   animation: spinToTheRight 5s;
   animation-fill-mode: forwards;
+  transition-timing-function: ease;
 
 }
 
@@ -82,18 +83,21 @@
   width: 50px;
   height: 50px;
   justify-self: center;
+  align-self: center;
 }
 .dice2{
   grid-area: dice2;
   width: 50px;
   height: 50px;
   justify-self: center;
+  align-self: center;
 }
 .dice3{
   grid-area: dice3;
   width: 50px;
   height: 50px;
   justify-self: center;
+  align-self: center;
 }
 .p1{
   grid-area: p1;
@@ -107,7 +111,23 @@
 .p2results{
   grid-area: p2results;
 }
+.landingPage{
+  display: block;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
 
+}
+
+h1, form{
+
+  color: white;
+}
 
 @keyframes spinToTheRight{
 
