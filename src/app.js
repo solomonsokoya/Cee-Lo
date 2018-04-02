@@ -8,19 +8,37 @@ $('button').click(function(){
     playGame();
     x++;
   }
-  else if( x === 2) {
+  else if( x === 2 && value.length < 2) {
     for (let n = 1 ; n <= 3  ; n ++){
     let $di = $(`.die${n}`);
-    $di.toggleClass(`die${n+10}`);
+    $di.addClass(`die${n+10}`);
+    $('img').removeClass(`die${n}`);
   }
   playGame();
   x++;
-  $('.button').text('Play Again');
+}
+  else if( x === 3 && value.length < 2){
+    for (let n = 1 ; n <= 3  ; n ++){
+      let $img = $(`.img${n}`);
+      $img.removeClass(`die${n+10}`).addClass(`die${n}`);
+    }
+    playGame();
+    x--;
 
   }
-  else if( x === 3){
-   location.reload(true);
+  else if (value.length === 2){
+
+    location.reload(true);
+
   }
+  else if(value === 20){
+    location.reload(true);
+  }
+
+  else if(value == 0){
+    location.reload(true);
+  }
+
 });
 
 function moveDiceToTheLeft() {
@@ -47,7 +65,7 @@ function setDice() {
 
 function diePics(diceArray) {
   for ( let i = 0; i < 3; i+= 1) {
-    $(`.die${i+1}`).attr('src', `images/die${diceArray[i]}.png`);
+    $(`.img${i+1}`).attr('src', `images/die${diceArray[i]}.png`);
   }
 }
 
@@ -89,7 +107,7 @@ function playGame() {
   $('.playerOne').text(value[0]);
   $('.playerTwo').text(value[1]);
 
-setTimeout(compareValue,5000);
+setTimeout(compareValue,2500);
 back();
 
 }
@@ -97,27 +115,32 @@ back();
 function makeDice(){
   for( let i = 1; i <=3; i+= 1){
     let $div= $(`.dice${i}`);
-    $div.append(`<img class = "die${i}" src ="images/die1.png">`);
+    $div.append(`<img class = "die${i} img${i}" src ="images/die1.png">`);
   }
 }
 function compareValue(){
   if (value.length === 2) {
     if (value[0] > value[1]) {
       $('.content').text(`P1 Has Won`);
+      $('.button').text("Play Again");
     }
     else if ( value[0] < value[1]){
       $('.content').text(`P2 Has Won`);
+      $('.button').text("Play Again");
     }
     else {
       $('.content').text(`Play Again`);
+      $('.button').text("Play Again");
     }
   }
   else if(value.length === 1){
     if (value[0] === 20) {
       $('.content').text(`P1 Has Won`);
+      $('.button').text("Play Again");
     }
     else if(value[0] === 0){
       $('.content').text(`P2 Has Won`);
+      $('.button').text("Play Again");
     }
   }
 }
