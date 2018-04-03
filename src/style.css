@@ -24,6 +24,7 @@
   text-align: center;
   font-size: 200px;
   opacity: .2;
+  text-transform: uppercase;
 }
 
 
@@ -62,7 +63,7 @@
 
   height: 100%;
   width: 100%;
-  animation: spinToTheRight 5s;
+  animation: spinToTheRight 3.5s;
   animation-fill-mode: forwards;
   transition-timing-function: ease;
 
@@ -72,7 +73,7 @@
 
   height: 100%;
   width: 100%;
-  animation: spinToTheLeft 5s;
+  animation: spinToTheLeft 3.5s;
   animation-fill-mode: forwards;
 }
 
@@ -112,7 +113,14 @@
   grid-area: p2results;
 }
 .landingPage{
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+  ". h1 ."
+  ". form ."
+  ". . ." ;
+
   z-index: 1;
   width: 100vw;
   height: 100vh;
@@ -124,6 +132,18 @@
 
 }
 
+  h1{
+    font-size: 60px;
+    grid-area: h1;
+    justify-self: center;
+    align-self: center;
+  }
+
+  form{
+    justify-self: center;
+    align-self: center;
+    grid-area: form;
+  }
 h1, form{
 
   color: white;

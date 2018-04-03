@@ -14,7 +14,7 @@ let submitClick = $('#submitButton').on('click', function(e){
   $player2 = $('#player2').val()
 
   $('.landingPage').css('display', 'none');
-  $('.content').text(`${$player1} Roll`);
+  $('.content').text(`${$player1}'s Roll`);
 
 });
 
@@ -174,6 +174,6 @@ function compareValue(){
 
 function back(){
   if(value.length === 1) {
-    $('.content').text(`${$player2}  Turn`);
+    $('.content').text(`${$player2}'s  Turn`);
   }
 }
