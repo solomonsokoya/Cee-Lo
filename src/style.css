@@ -10,6 +10,7 @@
   display: table;
   top: 0;
   background-size: cover;
+  background-color: rgb(247, 247, 247);
 }
 
 .inner{
@@ -52,6 +53,14 @@
   outline: 0;
 
 }
+
+.button:hover{
+
+  width: 11vw;
+  height: 12vh;
+  font-size: 13px;
+}
+
 .theButton{
   align-self: center;
   grid-area: theButton;
@@ -63,7 +72,7 @@
 
   height: 100%;
   width: 100%;
-  animation: spinToTheRight 3.5s;
+  animation: spinToTheRight 2.5s;
   animation-fill-mode: forwards;
   transition-timing-function: ease;
 
@@ -73,7 +82,7 @@
 
   height: 100%;
   width: 100%;
-  animation: spinToTheLeft 3.5s;
+  animation: spinToTheLeft 2.5s;
   animation-fill-mode: forwards;
 }
 
@@ -139,6 +148,13 @@
     align-self: center;
   }
 
+  h1:hover{
+
+    animation: spin 3s;
+    animation-fill-mode: forwards;
+  }
+
+
   form{
     justify-self: center;
     align-self: center;
@@ -171,4 +187,15 @@ h1, form{
   }
 }
 
+
+@keyframes spin{
+
+  from{
+    transform: rotate(0deg);
+
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
