@@ -120,7 +120,7 @@ function playGame() {
 function makeDice() {
   for (let i = 1; i <= 3; i += 1) {
     const $div = $(`.dice${i}`);
-    $div.append(`<img class = "die${i} img${i}" src ="images/die1.png">`);
+    $div.append(`<img class = "die${i} img${i}" src ="/images/die1.png">`);
   }
 }
 
@@ -151,6 +151,7 @@ function compareValue() {
 
 function back() {
   if (value.length === 1) {
-    $('.content').text(`${$player2}'s  Turn`);
+    setTimeout(
+    $('.content').text(`${$player2}'s  Turn`), 2000);
   }
 }
