@@ -59,6 +59,7 @@
   width: 11vw;
   height: 12vh;
   font-size: 13px;
+
 }
 
 .theButton{
@@ -145,13 +146,14 @@
     font-size: 60px;
     grid-area: h1;
     justify-self: center;
-    align-self: center;
+    align-self: end;
   }
 
   h1:hover{
 
     animation: spin 3s;
     animation-fill-mode: forwards;
+
   }
 
 
@@ -159,6 +161,7 @@
     justify-self: center;
     align-self: center;
     grid-area: form;
+    text-align: center;
   }
 h1, form{
 
