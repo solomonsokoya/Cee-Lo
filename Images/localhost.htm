@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3006/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title>
+<link href="./localhost_files/css" rel="stylesheet"><style>
+
+  *{
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+  .grid{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+  ". . . title . . . "
+  ". . statement statement statement . ."
+  ". . bt1 . bt2 . ."
+  ". . . . . . ."
+  ". . . . . . ."
+
+  }
+  .title, .bt1, .bt2{
+    font-family: 'Gugi', cursive;
+  }
+
+  .bt1{
+    border-radius: 12px;
+    grid-area: bt1;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .5s linear;
+    font-size: .7em;
+    width: 10vw;
+    height: 10vh;
+    justify-self: center;
+    align-self: center;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    outline: none;
+  }
+
+  .bt1:hover{
+    letter-spacing: 5px;
+  }
+
+  .bt2{
+    border-radius: 12px;
+    grid-area: bt2;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .5s linear;
+    width: 10vw;
+    height: 10vh;
+    justify-self: center;
+    align-self: center;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    outline: none;
+  }
+
+   .bt2:hover{
+    letter-spacing: 5px;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .statement{
+    grid-area: statement;
+    font-family: 'Lato', sans-serif;
+     justify-self: center;
+    align-self: end;
+    width: 40vw;
+  }
+
+  .title{
+    padding: 0;
+    height: 14px;
+    grid-area: title;
+    justify-self: center;
+    align-self: end;
+    font-size: 3.5em;
+    letter-spacing: 2px;
+  }
+
+.background{
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  background: url("/images/cover2.jpg");
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+</style></head>
+
+
+
+
+
+<body>
+<div class="background">
+  <div class="grid">
+
+
+
+    <p class="title"> Giggs</p>
+    <div class="statement"> Commited To Connecting Employers &amp; Employees</div>
+    <button class="bt1"><a href="http://localhost:3006/workers"> Worker</a> </button>
+    <button class="bt2"><a href="http://localhost:3006/employers"> Employer</a> </button>
+  </div>
+</div>
+
+
+</body></html>
