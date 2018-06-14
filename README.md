@@ -6,7 +6,6 @@ Cee-lo is a gambling game played with three six-sided dice. There is not one sta
 
 
 ## Technologies Used 
-
 +JQuery
 +Javascript
 +HTML
